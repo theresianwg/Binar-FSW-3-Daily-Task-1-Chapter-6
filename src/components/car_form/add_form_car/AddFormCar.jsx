@@ -26,7 +26,8 @@ const AddFormCar = (props) => {
       date: new Date(enteredDate),
     };
 
-    props.onSaveExpenseData(expenseData);
+    props.onSaveCarData(expenseData);
+    props.onClose();
   };
 
   return (

@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 
-import NewExpense from "./components/NewExpense/NewExpense";
-import Expenses from "./components/Expenses/Expenses";
 import ButtonHandler from "./components/car_form/button_handler/ButtonHandler";
+import CarIndex from "./components/list_car/CarIndex";
+
+import "./app.css";
 
 const DUMMY_EXPENSES = [
   {
@@ -48,20 +49,19 @@ const DUMMY_EXPENSES = [
 ];
 
 const App = () => {
-  const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
+  const [cars, setCars] = React.useState(DUMMY_EXPENSES);
 
-  const addExpenseHandler = (expense) => {
-    setExpenses((prevExpenses) => {
-      return [expense, ...prevExpenses];
+  const addExpenseHandler = (car) => {
+    setCars((prevCars) => {
+      return [car, ...prevCars];
     });
   };
 
   return (
-    <>
-      {/* <NewExpense onAddExpense={addExpenseHandler} />
-      <Expenses items={expenses} /> */}
-      <ButtonHandler />
-    </>
+    <div className="parent">
+      <ButtonHandler onAddCar={addExpenseHandler} />
+      <CarIndex items={cars} />
+    </div>
   );
 };
 

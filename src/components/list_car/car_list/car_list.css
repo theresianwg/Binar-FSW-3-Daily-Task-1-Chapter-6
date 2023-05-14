@@ -1,9 +1,9 @@
-.expenses-list {
+.car-list {
   list-style: none;
   padding: 0;
 }
 
-.expenses-list__fallback {
+.car-list-notfound {
   color: white;
   text-align: center;
 }
