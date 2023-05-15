@@ -3,5 +3,19 @@
   background-color: #0b2447;
   margin: 2rem auto;
   width: 100%;
-  max-width: 55rem;
+  max-width: 65rem;
+  border-radius: 10px;
+}
+
+.handler-button {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem auto;
+  gap: 1rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .handler-button {
+    flex-direction: column;
+  }
 }

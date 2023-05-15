@@ -10,7 +10,6 @@ const AddFormCar = (props) => {
 
   const convertToRupiah = (amount) => {
     return new Intl.NumberFormat("id-ID", {
-      style: "currency",
       currency: "IDR",
     }).format(amount);
   };
@@ -31,36 +30,34 @@ const AddFormCar = (props) => {
   };
 
   return (
-    <div className="modal">
-      <form onSubmit={submitHandler} className="car_controls">
-        <div className="car_control">
-          <label>Name and type</label>
-          <input type="text" value={enteredTitle} onChange={(e) => setEnteredTitle(e.target.value)} />
-        </div>
-        <div className="car_control">
-          <label>Detail</label>
-          <input type="text" value={enteredDescription} onChange={(e) => setEnteredDescription(e.target.value)} />
-        </div>
-        <div className="car_control">
-          <label>Stock</label>
-          <input type="number" min="1" step="1" value={enteredStock} onChange={(e) => setEnteredStock(e.target.value)} />
-        </div>
-        <div className="car_control">
-          <label>Amount</label>
-          <input type="text" value={enteredAmount} onChange={(e) => setEnteredAmount(e.target.value)} />
-        </div>
-        <div className="car_control">
-          <label>Date</label>
-          <input type="date" min="2019-01-01" max="2023-12-31" value={enteredDate} onChange={(e) => setEnteredDate(e.target.value)} />
-        </div>
-        <div className="car_button">
-          <button type="button" onClick={props.onClose}>
-            Cancel
-          </button>
-          <button type="submit">Add Expense</button>
-        </div>
-      </form>
-    </div>
+    <form onSubmit={submitHandler} className="car_controls">
+      <div className="car_control">
+        <input required id="title" type="text" onChange={(e) => setEnteredTitle(e.target.value)} />
+        <label htmlFor="title">Name and type</label>
+      </div>
+      <div className="car_control">
+        <input required id="detail" type="text" onChange={(e) => setEnteredDescription(e.target.value)} />
+        <label htmlFor="detail">Detail</label>
+      </div>
+      <div className="car_control">
+        <input required id="stock" type="number" min="1" step="1" onChange={(e) => setEnteredStock(e.target.value)} />
+        <label htmlFor="stock">Stock</label>
+      </div>
+      <div className="car_control">
+        <input required id="amount" type="text" onChange={(e) => setEnteredAmount(e.target.value)} />
+        <label htmlFor="amount">Amount</label>
+      </div>
+      <div className="car_control">
+        <input required id="date" type="date" min="2019-01-01" max="2023-12-31" onChange={(e) => setEnteredDate(e.target.value)} />
+        <label htmlFor="date">Date</label>
+      </div>
+      <div className="car_button">
+        <button type="button" onClick={props.onClose}>
+          Cancel
+        </button>
+        <button type="submit">Add Car</button>
+      </div>
+    </form>
   );
 };
 

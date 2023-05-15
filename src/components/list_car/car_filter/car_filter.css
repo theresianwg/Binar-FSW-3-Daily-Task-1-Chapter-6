@@ -6,15 +6,16 @@
 .car-filter__control {
   display: flex;
   width: 100%;
+  gap: 10px;
   align-items: center;
   justify-content: space-between;
-  margin: 1rem 0;
 }
 
 .car-filter label {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 0.5rem;
+  white-space: nowrap;
 }
 
 .car-filter select {
