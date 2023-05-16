@@ -26,29 +26,42 @@ const AddFormCar = (props) => {
     };
 
     props.onSaveCarData(expenseData);
+    setEnteredTitle("");
+    setEnteredDescription("");
+    setEnteredStock("");
+    setEnteredAmount("");
+    setEnteredDate("");
     props.onClose();
   };
 
   return (
     <form onSubmit={submitHandler} className="car_controls">
       <div className="car_control">
-        <input required id="title" type="text" onChange={(e) => setEnteredTitle(e.target.value)} />
+        <input required id="title" type="text" value={enteredTitle} onChange={(e) => setEnteredTitle(e.target.value)} />
         <label htmlFor="title">Name and type</label>
       </div>
       <div className="car_control">
-        <input required id="detail" type="text" onChange={(e) => setEnteredDescription(e.target.value)} />
+        <input required id="detail" type="text" value={enteredDescription} onChange={(e) => setEnteredDescription(e.target.value)} />
         <label htmlFor="detail">Detail</label>
       </div>
       <div className="car_control">
-        <input required id="stock" type="number" min="1" step="1" onChange={(e) => setEnteredStock(e.target.value)} />
+        <input required id="stock" type="number" value={enteredStock} min="1" step="1" onChange={(e) => setEnteredStock(e.target.value)} />
         <label htmlFor="stock">Stock</label>
       </div>
       <div className="car_control">
-        <input required id="amount" type="text" onChange={(e) => setEnteredAmount(e.target.value)} />
+        <input required id="amount" type="text" value={enteredAmount} onChange={(e) => setEnteredAmount(e.target.value)} />
         <label htmlFor="amount">Amount</label>
       </div>
       <div className="car_control">
-        <input required id="date" type="date" min="2019-01-01" max="2023-12-31" onChange={(e) => setEnteredDate(e.target.value)} />
+        <input
+          required
+          id="date"
+          type="date"
+          min="2019-01-01"
+          value={enteredDate}
+          max="2023-12-31"
+          onChange={(e) => setEnteredDate(e.target.value)}
+        />
         <label htmlFor="date">Date</label>
       </div>
       <div className="car_button">

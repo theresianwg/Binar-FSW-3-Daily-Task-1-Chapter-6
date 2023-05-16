@@ -25,11 +25,11 @@ const ButtonHandler = (props) => {
 
   return (
     <section className={activeCLass}>
-      <button onClick={handleOpenModal} class="show-modal">
+      <button onClick={handleOpenModal} className="show-modal">
         Add New Car
       </button>
-      <span onClick={handleCloseModal} class="overlay"></span>
-      <div class="modal-box">
+      <span onClick={handleCloseModal} className="overlay"></span>
+      <div className="modal-box">
         <AddFormCar onClose={handleCloseModal} onSaveCarData={savingCarData} />
       </div>
     </section>
